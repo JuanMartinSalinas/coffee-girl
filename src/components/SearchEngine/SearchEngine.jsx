@@ -9,13 +9,9 @@ function SearchEngine() {
     const [search, setSearch] = useState('');
 
     function handleSearch(e) {
-        let lowerCase = e.target.value.toLowerCase()
+        let lowerCase = e.target.value
         setSearch(lowerCase);
     }
-
-    // useEffect(() => {
-    //     setSearch('');
-    // })
 
     return (
         <div className={styles.mainBox}>
@@ -27,17 +23,18 @@ function SearchEngine() {
                     alt="coffee girl"/>
             </div>
 
-            <form className={styles.searchBox}>
+            <form className={styles.searchBox} action={`https://duckduckgo.com/?q=${search}`}>
                 <input 
                     className={styles.searchBar}
+                    autoComplete='off'
                     type="search"
-                    name="buscar"
+                    name="q"
                     placeholder="Coffee Coffee Go!"
                     onChange={handleSearch}
                 />
-                    <button id="myButton" disabled className={styles.button}>
-                        <a href={`https://duckduckgo.com/?q=${search}`}> <FaCoffee className={styles.buttonIcon}/></a>
-                    </button>                    
+                <button id="myButton" disabled={search ? false : true} className={styles.button}>
+                    <FaCoffee className={styles.buttonIcon}/>
+                </button>                    
             </form>
 
         </div>

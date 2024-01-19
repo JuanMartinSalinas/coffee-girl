@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./BookList.module.css"
-import { useFavoriteStore } from '../../store';
 
 const URL = "https://openlibrary.org/search.json?title="
 
 function BookList() {
 
-    const favs = useFavoriteStore(state => state.favoriteBooks)
-    const addFavs = useFavoriteStore(state => state.addFavorites)
-
     const [books, setBooks] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [resultTitle, setResultTitle] = useState('');
 
-    function favHandler() {
-        addFavs();
-    };
+    const [favs, setFavs] = useState([]);
+
+    function favHandler(book) {
+        setFavs([...favs, book])
+        localStorage.setItem("favorites", JSON.stringify(favs));
+    }
+
+    function favRemover(book) {
+        let updatedFavorites = favs.filter((fav) => fav.id !== book.id);
+        setFavs(updatedFavorites);
+      };
 
     function searchHandler(e) {
         e.preventDefault();
@@ -54,18 +58,25 @@ function BookList() {
         }
     };
 
+
+    useEffect(() => {
+        let storedFavorites = JSON.parse(localStorage.getItem("favorites")) || ["cum"];
+        setFavs(storedFavorites);
+        console.log(storedFavorites)
+    },[]) 
+
     return (
         <div className={styles.mainBox}>
             
             <div className={styles.favList}>
                 <h1 className={styles.bookSectionTitle}>Books yet to read</h1>
-                {favs.map((e) => {
+                {favs?.map((e) => {
                     return (
                         <div key={e.id}>
                             <p>{e.title}</p>
                             <p>{e.author}</p>
                             <img className={styles.bookImage} src={`https://covers.openlibrary.org/b/id/${e.cover_id}-L.jpg`} alt={e.title}/>
-                            <button onClick={() => {favHandler(e)}}>Add</button>
+                            <button onClick={() => {favRemover(e)}}>Delete</button>
                         </div>
                     )
                 })}
@@ -84,8 +95,7 @@ function BookList() {
                     />
                     <button onClick={() => fetchBooks()}>Search</button>
                 </div>
-
-                {/* <p>{resultTitle}</p> */}
+                <p>{resultTitle}</p>
 
                 <div className={styles.bookBox}>
                     {books.map((e) => {
