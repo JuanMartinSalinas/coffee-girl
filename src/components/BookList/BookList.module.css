@@ -1,0 +1,28 @@
+.mainBox {
+    border: 1px solid yellow;
+}
+
+.bookSectionTitle {
+    font-size:24px;
+}
+
+.bookInput {
+    max-height:200px;
+    max-width:200px;
+}
+
+.bookBox {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid magenta;
+}
+
+.bookImage {
+    max-height:200px;
+    max-width:200px;
+}
+
+.searchTools {
+    border: 1px solid red;
+    position:relative;
+}

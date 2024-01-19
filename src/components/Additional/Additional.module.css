@@ -1,0 +1,10 @@
+.mainBox {
+    background-color: rgba(0, 0, 0, 0.411);
+    border-radius:7px;
+    min-height:70vh;
+    width:60vw;
+    display:flex;
+    margin:auto;
+    margin-top:200px;
+    justify-content: center;
+}

@@ -1,0 +1,55 @@
+.mainBox {
+    visibility:hidden;
+    position: absolute; 
+    top:15vh;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: black;
+    border-radius:10px;
+    width:40%;
+    height:70%;
+    z-index: 3;
+    filter:opacity(0.75);
+}
+.mainBoxVisible {
+    visibility:visible;
+    position: absolute; 
+    top:15vh;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: black;
+    border-radius:10px;
+    width:40%;
+    height:70%;
+    z-index: 3;
+    filter:opacity(0.75);
+}
+
+.titleBox {
+    background-color: rgb(46, 46, 46);
+    filter:opacity(1);
+    height:6vh;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:3px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.settingsContent {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.settingsScroll {
+    justify-self: baseline;
+}

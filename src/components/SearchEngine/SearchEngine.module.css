@@ -1,0 +1,76 @@
+.mainBox {
+    /* border: 1px solid green; */
+    text-align: center;
+    position:relative;
+    margin-top:50px;
+    z-index:1;
+}
+
+.imageBox {
+    border:none;
+}
+    .image {
+        width:180px;
+        height:180px;
+        margin-bottom:10px;
+    }
+
+.searchBox {
+    display:flex;
+    /* border: 1px solid magenta; */
+    align-items: center;
+    justify-content: center;
+}
+    .searchBar {
+        border:0px;
+        border-radius:50px;
+        width:540px;
+        height:45px;
+        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+        color:white;
+        font-size:16px;
+        padding-left:19px;
+        filter:opacity(0.50);
+        transition:0.2s;
+    }
+    .searchBar:hover {
+        transition:0.2s;
+        filter:opacity(0.75);
+    }
+    .searchBar:active {
+        filter:opacity(0.75);
+    }
+    .searchBar:focus {
+        outline:none;
+    }
+
+.button {
+    border-radius:50px;
+    box-shadow:10px,10px,10px;
+    color: black;
+    background-color: transparent;
+    margin:5px;
+    padding:5px;
+    width:40px;
+    height:40px;
+    border:none;
+    transition:0.2s;
+}
+.button:hover {
+    transform: scale(1.2);
+    transition:0.2s;
+    border:none;
+}
+.button:focus {
+    outline:none;
+}
+    .buttonIcon {
+        width:30px;
+        height:30px;
+        margin:0px;
+        padding:0px;
+        color:white;
+        filter: drop-shadow(2px 2px 5px #00000079);
+        -webkit-filter: drop-shadow(2px 2px 5px #00000079);
+        cursor:pointer;
+    }

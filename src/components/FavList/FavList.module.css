@@ -1,0 +1,55 @@
+.mainBox {
+    display:grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-left: auto;
+    margin-right: auto;
+    width:42%;
+    margin-top:40px;
+    justify-items:center;
+}
+
+.favBox {
+    border-radius: 10px;
+    background-color:black;
+    filter: opacity(0.75);
+    margin:5px;
+    margin-bottom:8px;
+    height:70px;
+    width:70px;
+    justify-items: center;
+    text-align:center;
+}
+.image {
+    max-height:37px;
+    /* border: 1px solid magenta; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.favWaitBox {
+    border-radius: 10px;
+    background-color:white;
+    filter: opacity(0.75);
+    margin:5px;
+    margin-bottom:8px;
+    height:70px;
+    width:70px;
+    justify-items: center;
+    text-align:center;
+}
+.favWaitIcon {
+    color:rgba(0, 0, 0, 0.699);
+    height:60px;
+    width:60px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+

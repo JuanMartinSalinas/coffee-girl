@@ -1,0 +1,35 @@
+/* .mainBox {
+    position:absolute;
+    top:50%;
+    left:100%;
+    background-color:rgba(0, 0, 0, 0.479);
+    width:100px;
+    height:100px;
+    border-radius:7px;
+} */
+
+.tasks {
+    display:flex;
+}
+
+.taskBoxes {
+    display:inline-block;
+    justify-content: center;
+}
+
+.taskBox {
+    background-color:red;
+    max-width:500px;
+    max-height:50px;
+    margin-top:10px;
+    position:relative;
+    display:flex;
+}
+.noTaskBox {
+    background-color:rgb(0, 255, 42);
+    max-width:500px;
+    max-height:50px;
+    margin-top:10px;
+    position:relative;
+    display:flex;
+}
