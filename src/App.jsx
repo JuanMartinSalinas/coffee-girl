@@ -5,6 +5,7 @@ import NavBar from "../src/components/NavBar/NavBar";
 import Additional from "../src/components/Additional/Additional"
 import FavList from "../src/components/FavList/FavList"
 import Settings from "../src/components/Settings/Settings"
+import Footer from './components/Footer/Footer';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <MainPage/>
             <FavList/>
             <Additional/>
+            <Footer/>
         </Fragment>
     )
 }

@@ -1,0 +1,8 @@
+.mainBox {
+    border:1px solid transparent;
+    width:65%;
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-right:5px;
+    border-left-color:rgba(128, 128, 128, 0.39);
+}

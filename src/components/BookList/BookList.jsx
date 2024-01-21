@@ -9,7 +9,12 @@ function BookList() {
     const [searchTerm, setSearchTerm] = useState('');
     const [resultTitle, setResultTitle] = useState('');
 
-    const [favs, setFavs] = useState([]);
+    const [favs, setFavs] = useState(() => {
+        // getting stored value
+        const saved = localStorage.getItem("favorites");
+        const initialValue = JSON.parse(saved);
+        return initialValue || [];
+      });
 
     function favHandler(book) {
         setFavs([...favs, book])
@@ -64,6 +69,11 @@ function BookList() {
         setFavs(storedFavorites);
         console.log(storedFavorites)
     },[]) 
+
+    useEffect(() => {
+        // storing input name
+        localStorage.setItem("favorites", JSON.stringify(favs));
+      }, [favs]);
 
     return (
         <div className={styles.mainBox}>

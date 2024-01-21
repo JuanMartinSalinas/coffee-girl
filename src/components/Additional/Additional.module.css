@@ -1,10 +1,73 @@
 .mainBox {
-    background-color: rgba(0, 0, 0, 0.411);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius:7px;
     min-height:70vh;
-    width:60vw;
+    width:55vw;
     display:flex;
     margin:auto;
-    margin-top:200px;
     justify-content: space-between;
+    margin-top:60px;
 }
+
+ul {
+    width:40%;
+    margin:-10px;
+    padding:0px;
+    font-size: 17px;
+}
+
+li {
+    display:inline-block;
+    width:80%;
+    height:35px;
+    padding-left:20px;
+    margin:0px;
+    margin-top:5px;
+    margin-left:5px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    border:1px solid transparent;
+    cursor:pointer;
+}
+
+li:nth-child(1) {
+    border-top-left-radius: 5px;
+    margin-top:25px;
+}
+
+li:hover {
+    border-left-color:rgb(224, 89, 224);
+}
+
+.arrow {
+    max-height: 20px;
+    max-width: 20px;
+    animation:movement 1500ms ease infinite;
+}
+
+.textArrow {
+    margin-top:160px;
+    margin-bottom:5px;
+}
+
+@keyframes movement {
+    0% {transform:translateY(5px)}
+    50% {transform:translateY(-5px)}
+    100% {transform:translateY(5px)}
+}
+
+
+
+.textAndArrow {
+    view-timeline-name: --arrow;
+    view-timeline-axis: block;
+
+    animation-timeline: -arrow;
+    animation-name:disappear;
+
+    animation-range: entry 80%;
+    animation-fill-mode:both;
+
+    animation-duration: 5s;
+}
+
