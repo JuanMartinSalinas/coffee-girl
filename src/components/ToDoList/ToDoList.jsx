@@ -39,7 +39,7 @@ function ToDoList() {
     };
 
     useEffect(() => {
-        let storedToDo = JSON.parse(localStorage.getItem("todo")) || ["cum"];
+        let storedToDo = JSON.parse(localStorage.getItem("todo")) || [];
         setTodo(storedToDo);
     },[]) 
     useEffect(() => {
