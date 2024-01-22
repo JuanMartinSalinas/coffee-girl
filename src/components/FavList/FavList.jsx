@@ -41,7 +41,7 @@ function FavList() {
     }
 
     useEffect(() => {
-        let storedFavorites = JSON.parse(localStorage.getItem("browserFavs")) || ["cummy"];
+        let storedFavorites = JSON.parse(localStorage.getItem("browserFavs")) || [];
         setFavs(storedFavorites);
         // console.log(storedFavorites);
     },[]) 

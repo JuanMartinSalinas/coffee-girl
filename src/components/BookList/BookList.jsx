@@ -70,7 +70,7 @@ function BookList() {
     };
 
     useEffect(() => {
-        let storedFavorites = JSON.parse(localStorage.getItem("favorites")) || ["cum"];
+        let storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
         setFavs(storedFavorites);
     },[]) 
     useEffect(() => {
