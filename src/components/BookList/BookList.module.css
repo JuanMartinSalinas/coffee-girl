@@ -7,28 +7,155 @@
     border-left-color:rgba(128, 128, 128, 0.39);
 }
 
+h1 {
+    text-align:left;
+    padding-left:30px;
+}
 
-.bookSectionTitle {
-    font-size:24px;
+.pseudoForm {
+    display:flex;
 }
 
 .bookInput {
-    max-height:200px;
-    max-width:200px;
+    margin-left:30px;
+    padding-left:10px;
+    display:block;
+    width:74.5%;
+    height:28px;
+    border-radius:2px;
+    border:1px solid grey;
+    background-color: transparent;
+    transition: 0.2s ease-in;
+}
+    .bookInput:hover {
+        transition: 0.2s ease-out;
+        border-color: rgb(255, 212, 72);
+    }
+
+.bookButton[disabled] {
+    margin-left:10px;
+    padding:10px;
+    padding-top:4px;
+    padding-bottom:4px;
+    border-radius:50px;
+    background-color: grey;
+    border: 1px solid grey;
+    color:rgb(0, 0, 0);
+    cursor:auto;
+    font-weight: bold;
+}
+    .bookButton[disabled]:hover {
+        transform:scale(1);
+}
+.bookButton {
+    margin-left:10px;
+    padding:10px;
+    padding-top:4px;
+    padding-bottom:4px;
+    border-radius:50px;
+    background-color: grey;
+    border: 1px solid grey;
+    color:rgb(0, 0, 0);
+    cursor:pointer;
+    font-weight: bold;
+    background-color: rgb(255, 181, 90);
+    border-color:  rgb(255, 181, 90);
+}
+    .bookButton:hover {
+        transform:scale(1.05);
+    }
+
+.bookBoxHidden {
+    display:none;
 }
 
 .bookBox {
     display:grid;
     grid-template-columns: repeat(4, 1fr);
-    border: 1px solid magenta;
+    overflow-y:auto;
+    height:300px;
+
+    scrollbar-color: rgb(255, 181, 90);
+    scrollbar-width: thin;
+}
+.fetchedBooks {
+    position:relative;
+    margin:10px;
+}
+.bookImage {
+    display:block;
+    height:200px;
+    width:130px;
+    object-fit:cover;
+}
+.bookImageInfo {
+    position:absolute;
+    height:200px;
+    width:130px;
+    top:0;
+    left:0;
+    background-color: rgba(0, 0, 0, 0.384);
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:baseline;
+    opacity:0;
+    transform:translateY(30px);
+    transition:0.1s ease-in;
+}
+    .bookImageInfo:hover {
+        opacity:1;
+        transform:translateY(0px);
+        transition:0.1s ease-in;
+    }
+
+.bookTitle {
+    font-size:18px;
+    margin-top:10px;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+.bookAuthor {
+    margin-top:0px;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 }
 
-.bookImage {
-    max-height:200px;
-    max-width:200px;
+.addToFavs {
+    border: 0px transparent;
+    border-radius:50px;
+    background-color: gray;
+    height:30px;
+    width:30px;
+    cursor:pointer;
 }
+    .addToFavs:focus {
+        background-color: greenyellow;
+        color:black;
+        transition:0.2s ease-in;
+        transform:scale(0.8)
+    }
+
+.deleteFavs {
+    border: 0px transparent;
+    border-radius:50px;
+    background-color: gray;
+    height:30px;
+    width:30px;
+    cursor:pointer;
+}
+    .deleteFavs:focus {
+        background-color: rgb(255, 71, 47);
+        color:black;
+        transition:0.2s ease-in;
+        transform:scale(0.8)
+    }
+
 
 .searchTools {
-    border: 1px solid red;
     position:relative;
 }
+
+

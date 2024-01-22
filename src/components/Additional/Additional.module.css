@@ -2,7 +2,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     border-radius:7px;
     min-height:70vh;
-    width:55vw;
+    width:65vw;
     display:flex;
     margin:auto;
     justify-content: space-between;
@@ -16,28 +16,61 @@ ul {
     font-size: 17px;
 }
 
-li {
+.liNoFocus {
     display:inline-block;
     width:80%;
     height:35px;
+    padding-top:5px;
     padding-left:20px;
     margin:0px;
     margin-top:5px;
     margin-left:5px;
     text-align: left;
     background-color: rgba(0, 0, 0, 0.5);
-    border:1px solid transparent;
+    border:0px solid transparent;
     cursor:pointer;
+    transition:0.2s ease-in;
 }
 
-li:nth-child(1) {
+.liNoFocus:nth-child(1) {
     border-top-left-radius: 5px;
     margin-top:25px;
 }
-
-li:hover {
-    border-left-color:rgb(224, 89, 224);
+.liNoFocus:last-child {
+    border-bottom-left-radius: 5px;
 }
+
+.liNoFocus:hover {
+    border-left-color:rgb(224, 177, 89);
+    border-left:3px solid rgb(224, 177, 89);
+}
+
+.liFocus {
+    display:inline-block;
+    width:80%;
+    height:35px;
+    padding-top:5px;
+    padding-left:20px;
+    margin:0px;
+    margin-top:5px;
+    margin-left:5px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-left-color:rgb(224, 177, 89);
+    border-left:3px solid rgb(224, 177, 89);
+    cursor:pointer;
+    transition:0.2s ease-in;
+}
+
+.liFocus:nth-child(1) {
+    border-top-left-radius: 5px;
+    margin-top:25px;
+}
+.liFocus:last-child {
+    border-bottom-left-radius: 5px;
+}
+
+
 
 .arrow {
     max-height: 20px;

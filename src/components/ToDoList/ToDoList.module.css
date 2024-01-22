@@ -12,14 +12,14 @@ h1 {
     padding-left:30px;
 }
 
-form {
+.pseudoForm {
     display:flex;
 }
 
 .toDoInput {
     margin-left:30px;
     padding-left:10px;
-    display:block;
+    display:flex;
     width:70%;
     height:24px;
     border-radius:2px;

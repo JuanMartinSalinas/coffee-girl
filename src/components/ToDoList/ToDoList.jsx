@@ -51,7 +51,7 @@ function ToDoList() {
         <div className={styles.mainBox}>
             <div className={styles.insideBox}>
                 <h1>To-do List</h1>
-                <form onSubmit={handleSubmit}>
+                <form className={styles.pseudoForm} onSubmit={handleSubmit}>
                     <input
                         className={styles.toDoInput}
                         name="buscar"

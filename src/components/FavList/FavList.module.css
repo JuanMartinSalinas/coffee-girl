@@ -10,6 +10,7 @@ a {
     border-radius:10px;
     z-index:6;
     width:20%;
+    margin-top:-100px;
 }
 
 .dialogForm {
@@ -17,6 +18,7 @@ a {
 }
 
 .dialogTitle {
+    margin-top:0px;
     display:flex;   
     justify-content: baseline;
     width:50%;
