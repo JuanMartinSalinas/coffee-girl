@@ -68,10 +68,10 @@ function ToDoList() {
                                     <div className={styles.tasks}>
                                         <p className={styles.taskTextBox} onClick={() => toggleComplete(todo.id)}>{todo.task}</p>        
                                         <div className={styles.taskButtons}>
-                                            <button onClick={() => editTodo(todo.id)}>
+                                            <button className={styles.toDoButtons}onClick={() => editTodo(todo.id)}>
                                                 <FaEdit />
                                             </button>
-                                            <button onClick={() => deleteTodo(todo.id)}>
+                                            <button className={styles.toDoButtons} onClick={() => deleteTodo(todo.id)}>
                                                 <FaRegTrashCan/>                                    
                                             </button>
                                         </div>
