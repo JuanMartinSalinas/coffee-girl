@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import styles from "./Login.module.css"
 
-function Login({toggleProfile, setOpenProfile, openProfile}) {
-
+function Login() {
+    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
@@ -17,9 +17,9 @@ function Login({toggleProfile, setOpenProfile, openProfile}) {
     }
 
     return (
-        <div>
-            <h1 className={styles.dialogTitle}>Profile</h1>
-                <form onSubmit={handleSubmit}>
+        <div className={styles.mainBox}>
+            <p>Coming soon!</p>
+                {/* <form onSubmit={handleSubmit}>
                     <label className={styles.labelForm}>Email</label>
                     <input 
                         className={styles.inputForm}
@@ -38,8 +38,7 @@ function Login({toggleProfile, setOpenProfile, openProfile}) {
                         <button className={styles.cancelLogin} type="button" onClick={() => setOpenProfile(!openProfile)}>Cancel</button>
                         <button className={styles.submitLogin} type="submit" disabled={email && password ? false : true}>Log in</button>
                     </div>
-                </form>
-            <button className={styles.dialogExit} onClick={() => toggleProfile()}>X</button>
+                </form> */}
         </div>
     );
 }

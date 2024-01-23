@@ -1,0 +1,12 @@
+.langImg {
+    max-height:40px;
+    max-width:40px;
+    padding:5px;
+    filter:saturate(0);
+    transition: 0.2s ease-in;
+    cursor:pointer;
+}
+    .langImg:hover {
+        filter: saturate(1);
+        transition: 0.2s ease-out;
+    }

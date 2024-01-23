@@ -11,6 +11,12 @@
     backdrop-filter: blur(4px);
 }
 
+.aboutMe {
+    text-align:center;
+    margin:0px;
+    padding:0px;
+}
+
 .navBar {
     display:flex;
 }
