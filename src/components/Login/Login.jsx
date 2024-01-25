@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import styles from "./Login.module.css"
+import { useLanguageStore } from '../../store';
 
 function Login() {
     
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
+    const lang = useLanguageStore((state)=> state.english) 
+
     function handleEmail(e) {
         setEmail(e)
     }
@@ -18,7 +21,7 @@ function Login() {
 
     return (
         <div className={styles.mainBox}>
-            <p>Coming soon!</p>
+            <p>{lang ? "Coming soon!" : "Muy pronto!"}</p>
                 {/* <form onSubmit={handleSubmit}>
                     <label className={styles.labelForm}>Email</label>
                     <input 

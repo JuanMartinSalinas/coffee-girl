@@ -26,7 +26,7 @@ function Newspaper() {
 
     return (
         <div className={styles.mainBox}>
-            <h1 className={styles.newspaperTitle}>Today's news</h1>
+            <h1 className={styles.newspaperTitle}>{lang ? "Today's news" : "Las noticias de hoy"}</h1>
             <div className={styles.newsBox}>                
                 {nius.map((e) => {
                     return (
@@ -35,7 +35,7 @@ function Newspaper() {
                             <h3>By {e.creator} | {e.pubDate}</h3>
                             {e.image_url ? <img className={styles.image} src={e.image_url} alt={e.title}/> : ""}
                             <p>{e.description}</p>
-                            <a className={styles.link} target="_blank" href={e.link}>See more</a>
+                            <a className={styles.link} target="_blank" href={e.link}>{lang ? "See more" : "Ver más"}</a>
                             <br/>
                         </div>
                     )

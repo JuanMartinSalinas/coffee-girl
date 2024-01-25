@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-
+import { useLanguageStore } from '../../store';
 import styles from "./ToDoList.module.css"
 import { FaRegTrashCan } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
@@ -11,6 +11,9 @@ function ToDoList() {
 
     const [value, setValue] = useState('');
     const [todos, setTodo] = useState(() => {
+
+    const lang = useLanguageStore((state) => state.english) 
+
         // getting stored value
         const saved = localStorage.getItem("todo");
         const initialValue = JSON.parse(saved);
@@ -58,7 +61,7 @@ function ToDoList() {
                         onChange={e => setValue(e.target.value)}
                         value={value}
                     />
-                    <button className={styles.toDoButton} disabled={value ? "" : "disabled"}>New task</button>                   
+                    <button className={styles.toDoButton} disabled={value ? "" : "disabled"}>{lang ? "New task" : "Nuevo quehacer"}</button>                   
                 </form>
                 <div className={styles.taskBoxes}>
                     {

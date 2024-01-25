@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import styles from "./BookList.module.css"
 import { MdFormatListBulletedAdd } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
-
+import { useLanguageStore } from '../../store';
 
 const URL = "https://openlibrary.org/search.json?title="
 
 function BookList() {
+
+    const lang = useLanguageStore(state => state.english);
 
     const [books, setBooks] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -59,10 +61,10 @@ function BookList() {
                     }
                 });                
                 setBooks(newBooks);                
-                newBooks.length > 1 ? setResultTitle('Your search results:') : setResultTitle('No search result.') 
+                newBooks.length > 1 ? setResultTitle(lang ? 'Your search results:' : 'Tus resultados:') : setResultTitle(lang ? 'No search result.' : 'No hay resultados que coincidan.') 
             } else {
                 setBooks([]);
-                setResultTitle('No search result.');
+                setResultTitle(lang ? 'No search result.' : 'No hay resultados que coincidan.');
             }
         } catch(error) {
             console.log(error);
@@ -83,7 +85,7 @@ function BookList() {
             
             <div className={styles.favList}>
                 {favs.length > 0 ? (
-                    <h1 className={styles.bookSectionTitle}>Books yet to read</h1>
+                    <h1 className={styles.bookSectionTitle}>{lang ? "Books yet to read" : "Libros por leer"}</h1>
                 ) : null}
                 <div className={favs.length > 0 ? styles.bookBox : styles.bookBoxHidden}>
                     {favs?.map((e) => {
@@ -103,7 +105,7 @@ function BookList() {
 
             <div className={styles.searchBooks}>
                 <div className={styles.searchTools}>
-                    <h1 className={styles.bookSectionTitle}>Search your book</h1>
+                    <h1 className={styles.bookSectionTitle}>{lang ? "Search your book" : "Busca tu libro"}</h1>
                     <div className={styles.pseudoForm}>
                         <input
                             id="bookInput"
@@ -113,7 +115,7 @@ function BookList() {
                             placeholder="The Way of Kings..."
                             onChange={(e) => searchHandler(e)}
                         />
-                        <button className={styles.bookButton} disabled={searchTerm ? false : true} onClick={() => fetchBooks()}>Search</button>
+                        <button className={styles.bookButton} disabled={searchTerm ? false : true} onClick={() => fetchBooks()}>{lang ? "Search" : "Buscar"}</button>
                     </div>
                 </div>
 

@@ -9,15 +9,16 @@ import { useLanguageStore } from '../../store';
 
 function Language() {
 
-    const lang = useLanguageStore(state => state.english)
+    const changeLang = useLanguageStore(state => state.changeLanguage)
+
 
 
     return (
         <div>
             <li>
                 <div className={styles.language}>
-                    <img className={styles.langImg} src={english}/>
-                    <img className={styles.langImg} src={spain}/>
+                    <img className={styles.langImg} onClick={changeLang} src={english}/>
+                    <img className={styles.langImg} onClick={changeLang} src={spain}/>
                 </div>
             </li>
         </div>
