@@ -11,14 +11,12 @@ function ToDoList() {
 
     const [value, setValue] = useState('');
     const [todos, setTodo] = useState(() => {
-
-    const lang = useLanguageStore((state) => state.english) 
-
         // getting stored value
         const saved = localStorage.getItem("todo");
         const initialValue = JSON.parse(saved);
         return initialValue || [];
       });
+      const lang = useLanguageStore((state) => state.english) 
 
     function addTodo(todo) {
         setTodo([...todos, {id:uuidv4(), task:todo, completed:false, isEditing:false}])
