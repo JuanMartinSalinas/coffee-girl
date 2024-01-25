@@ -17,8 +17,8 @@ function Language() {
         <div>
             <li>
                 <div className={styles.language}>
-                    <img className={styles.langImg} onClick={changeLang} src={english}/>
-                    <img className={styles.langImg} onClick={changeLang} src={spain}/>
+                    <img className={styles.langImg} onClick={() => changeLang()} src={english}/>
+                    <img className={styles.langImg} onClick={() => changeLang()} src={spain}/>
                 </div>
             </li>
         </div>
