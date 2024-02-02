@@ -4,8 +4,8 @@ export const useLanguageStore = create((set) => {
     return {
         english: true,
 
-        changeLanguage: () => {
-            set({english:!english})
+        changeLanguage: (e) => {
+            set({english:e})
         }
     }
 });

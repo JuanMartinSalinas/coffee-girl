@@ -17,7 +17,6 @@ import { useLanguageStore } from '../../store';
 function NavBar() {
 
     const [openAbout, setOpenAbout] = useState(false);
-    const [openSettings, setOpenSettings] = useState(false);
     const [openProfile, setOpenProfile] = useState(false);
     const [openYouTube, setYouTube] = useState(false);
 
@@ -41,10 +40,12 @@ function NavBar() {
             <div>
                 <dialog open={openAbout}>
                     <h1 className={styles.aboutMe}>{lang ? "About me" : "Sobre mí"}</h1>
-                    <p>Hi! I'm <label className={styles.aboutName}>Juan Martín Salinas</label>, a Front-end developer from Argentina. I created this SPA since I felt I needed a new look in my
+                    {lang ? (<p>Hi! I'm <label className={styles.aboutName}>Juan Martín Salinas</label>, a Front-end developer from Argentina. I created this SPA since I felt I needed a new look in my
                        browser. Feel free to use it whenever you like; the deployed version uses LocalStorage and Zustand to save everything you do
-                       here :)</p>
-                    <p>If you want to know more about me, you can find me in:</p>
+                       here :)</p>) : (<p>Hola! Soy <label className={styles.aboutName}>Juan Martín Salinas</label>, un desarrollador Front-end de Argentina. Hice esta página porque quería cambiar un poco la
+                       apariencia de mi navegador. Sentite libre de usarlo libremente, la versión subida en Vercel usa LocalStorage y Zustand para guardar todos los cambios :)</p>) }
+                    {lang ? (<p>If you want to know more about me, you can find me in:</p>) : 
+                    (<p>Si querés saber más sobre mí, podés encontrarme en:</p>)}
                     <div>
                         <a target="_blank" href="https://www.linkedin.com/in/juanmartinsalinas/"><img className={styles.techLogos} src={linkedinLogo} alt="linkedin"/></a>
                         <a target="_blank" href="https://github.com/JuanMartinSalinas"><img className={styles.techLogos} src={githubLogo} alt="github"/></a>
@@ -57,9 +58,12 @@ function NavBar() {
                 </dialog>
 
                 <dialog open={openYouTube}>
-                    <h1>The official Coffee Girl playlist</h1>
-                    <p>Want to chill a bit? Then take a cup of coffee (or tea!) and click in the video below to hear the most relaxing playlist you'll
-                       ever found. You can close this dialog and the video will keep playing until you close the Coffee Girl main page.</p>
+                    <h1>{lang ? "The official Coffee Girl playlist" : "La playlist oficial de Coffee Girl"}</h1>
+                    {lang ? (<p>Want to chill a bit? Then take a cup of coffee (or tea!) and click in the video below to hear the most relaxing playlist you'll
+                       ever found. You can close this dialog and the video will keep playing until you close the Coffee Girl main page.</p>) :
+                       (<p>¿Te gustaría relajarte un rato? Entonces servite una taza de café (o té!) y entrá en el video de acá abajo para escuchar la lista de reproducción
+                        más relajante que vas a encontrar. Podés cerrar esta ventana emergente y el video va a seguir reproduciéndose hasta que cierres la página de Coffee Girl.
+                       </p>)}
                     <iframe className={styles.ytVideo} src="https://www.youtube.com/embed/QwkosFlW0Hk"/>
                     <button className={styles.dialogExit} onClick={() => toggleYouTube()}>X</button>
                 </dialog>

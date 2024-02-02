@@ -4,7 +4,7 @@ import { useLanguageStore } from '../../store';
 
 function Footer() {
 
-    const lang = useLanguageStore((state) => state) 
+    const lang = useLanguageStore((state) => state.english) 
 
     return (
         <footer className={styles.footer}>
