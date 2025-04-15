@@ -1,32 +1,28 @@
-import { useState } from 'react';
-// import { josefinSans, dancingScript } from '@/app/ui/fonts'
-
+import { useState, useEffect } from 'react';
 import styles from "./Clock.module.css"
 
 export default function Clock() {
+    const [ctime, setTime] = useState(getCurrentTime());
 
-    let date = new Date()
-
-    let hours = date.getHours();
-    let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
-
-    let time = `${hours}:${minutes}`
-
-    const [ctime, setTime] = useState(time);
-    const UpdateTime = () => {
-        hours = date.getHours();
-        minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
-
-        let time = `${hours}:${minutes}`
-
-        setTime(time)
+    function getCurrentTime() {
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+        return `${hours}:${minutes}`;
     }
-    setInterval(UpdateTime)
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setTime(getCurrentTime());
+        }, 1000);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
     return (
         <div className={styles.clockBox}>
             {ctime}
             <p className={styles.hs}>HS</p>
         </div>
-    )
-
+    );
 }
